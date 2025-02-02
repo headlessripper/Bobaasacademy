@@ -8,11 +8,11 @@ import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import { useState } from 'react';
 
-interface MeetingProps {
+interface PageProps {
   params: { id: string };
 }
 
-const Meeting = ({ params }: MeetingProps) => {
+const Meeting = ({ params }: PageProps) => {
   const { isLoaded } = useUser(); // Removed 'user' since it's unused
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const { call, isCallLoading } = useGetCallByid(params.id);
