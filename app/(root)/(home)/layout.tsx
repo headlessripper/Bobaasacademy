@@ -1,7 +1,7 @@
 import Navbar from '@/components/ui/Navbar'
 import Sidebar from '@/components/ui/Sidebar'
 import { Metadata } from 'next';
-import React, { Children, ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Bobaas Academy Of Excellence ",
