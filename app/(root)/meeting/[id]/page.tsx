@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import Loader from '@/components/ui/Loader';
 import MeetingRoom from '@/components/ui/MeetingRoom';
 import MeetingSetup from '@/components/ui/MeetingSetup';
@@ -7,10 +8,14 @@ import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import { useState } from 'react';
 
-const Meeting = ({ params: { id } }: { params: { id: string } }) => {
+interface MeetingProps {
+  params: { id: string };
+}
+
+const Meeting = ({ params }: MeetingProps) => {
   const { isLoaded } = useUser(); // Removed 'user' since it's unused
   const [isSetupComplete, setIsSetupComplete] = useState(false);
-  const { call, isCallLoading } = useGetCallByid(id);
+  const { call, isCallLoading } = useGetCallByid(params.id);
 
   if (!isLoaded || isCallLoading) return <Loader />;
 
