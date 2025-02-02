@@ -1,5 +1,4 @@
 import CallList from '@/components/ui/CallList'
-import { Call } from '@stream-io/video-react-sdk'
 import React from 'react'
 
 const Previous = () => {
